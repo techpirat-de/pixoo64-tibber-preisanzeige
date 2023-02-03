@@ -21,6 +21,8 @@ Angegeben werden auch das Datum, Uhrzeit und der Preis.
 Euern tibber API Key bekommt ihr hier: https://developer.tibber.com/settings/access-token
 Diesen müsst Ihr in der pixoo_display.py an entsprechender Stelle eintagen
 
+Besucht mich auf YouTube: https://www.youtube.com/techpirat
+
 
 ##############################  
 
@@ -46,3 +48,5 @@ The date, time and price are also given.
 
 You can get your tibber API key here: https://developer.tibber.com/settings/access-token
 You have to enter this in the pixoo_display.py at the appropriate place
+
+Visit me on YouTube: https://www.youtube.com/techpirat
