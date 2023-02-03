@@ -38,7 +38,7 @@ def pixoo_text():
 
     # Trage hier deine  Authentifizierung ein
     headers = {
-        "Authorization": 'Bearer ' + 'hier eintragen',
+        "Authorization": 'Bearer ' + 'cxVTBJ6azgGmJHFl7VW9cmPoBzS-eWZ54yBNTXo_W_A',
         "Content-Type": "application/json",
     }
 
@@ -55,7 +55,16 @@ def pixoo_text():
     response_data = response.json()
 
     # Bilde den Strompreis aus der Antwort
-    total_price = response_data["data"]["viewer"]["homes"][0]["currentSubscription"]["priceInfo"]["current"]["total"]
+    homes = response_data["data"]["viewer"]["homes"]
+    total_price = None
+    for home in homes:
+        if home.get("currentSubscription") is not None:
+            total_price = home["currentSubscription"]["priceInfo"]["current"]["total"]
+            break
+    if total_price is None:
+        print("No current subscription found.")
+    else:
+        print("Total price:", total_price)
 
     # Drucke den Strompreis
     print(total_price)
