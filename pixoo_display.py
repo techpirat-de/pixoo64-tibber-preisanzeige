@@ -3,13 +3,9 @@
 from pixoo import  Pixoo
 import time
 import requests
+import api_key
 
-# importiere config.ini
-import configparser
-config = configparser.ConfigParser()
-config.read('config.ini')
-
-#api_key = config['tibber_api']['api_key']
+print(api_key.API_KEY)
 
 # Funktion um den Strompreis von Tibber abzufragen und auf dem Pixoo64 Display anzuzeigen
 def pixoo_text():
@@ -38,7 +34,7 @@ def pixoo_text():
 
     # Trage hier deine  Authentifizierung ein
     headers = {
-        "Authorization": 'Bearer ' + 'cxVTBJ6azgGmJHFl7VW9cmPoBzS-eWZ54yBNTXo_W_A',
+        "Authorization": 'Bearer ' + api_key.API_KEY,
         "Content-Type": "application/json",
     }
 
