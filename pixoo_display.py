@@ -4,8 +4,10 @@ from pixoo import  Pixoo
 import time
 import requests
 import api_key
+import local_ip
 
 print(api_key.API_KEY)
+print(local_ip.Local_ip)
 
 # Funktion um den Strompreis von Tibber abzufragen und auf dem Pixoo64 Display anzuzeigen
 def pixoo_text():
@@ -65,7 +67,7 @@ def pixoo_text():
     # Drucke den Strompreis
     print(total_price)
 
-    pix = Pixoo('192.168.2.200', 64, True)
+    pix = Pixoo(local_ip.Local_ip, 64, True)
 
     # Zeige aktuelle Uhrzeit und gebe sie im deutschen Format aus
     now = time.localtime()
@@ -77,13 +79,13 @@ def pixoo_text():
     # Bestimme das Hintergrundbild
     # Ist der total_price kleiner als 0,3 dann zeige grüne Ampel
     if total_price < 0.3:
-        pix.draw_image('/Users/joerg/Downloads/ampel_gruen.png')
+        pix.draw_image('images/ampel_gruen.png')
     # Ist der total_price größer als 0,3 und kleiner als 0,4 dann zeige gelbe Ampel
     elif total_price > 0.3 and total_price < 0.4:
-        pix.draw_image('/Users/joerg/Downloads/ampel_gelb.png')
+        pix.draw_image('images/ampel_gelb.png')
     # Ist der total_price größer als 0,4 dann zeige rote Ampel
     elif total_price > 0.4:
-        pix.draw_image('/Users/joerg/Downloads/ampel_rot.png')
+        pix.draw_image('images/ampel_rot.png')
     # Schreibe die Texte auf dem Display
     pix.draw_text('Tibber', (3,  3), (  0,   255, 0))
     pix.draw_text('Strompreis', (3,  9), (255,   0,   0))
