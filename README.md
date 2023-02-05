@@ -12,16 +12,17 @@ Bitte folgende Module installieren und importieren:
 from pixoo import Pixoo # Das ist die Library für das Pixoo64
 import time
 import requests
+import api_key
+import local_ip
 
-Um die Echtzeit-Preisanzeige zu bekommen, braucht ihr einen API-Key von Tibber. Euren Tibber API-Key bekommt ihr hier: https://developer.tibber.com/settings/access-token. Einfach dort mit euren normalen Zugangsdaten anmelden. Diesen müsst ihr an der entsprechenden Stelle in der Datei pixoo_display.py eintragen.
+Um die Echtzeit-Preisanzeige zu bekommen, braucht ihr einen API-Key von Tibber. Euren Tibber API-Key bekommt ihr hier: https://developer.tibber.com/settings/access-token. Einfach dort mit euren normalen Zugangsdaten anmelden. Diesen müsst ihr an der entsprechenden Stelle in der Datei api_key.py eintragen.
 
 Ihr müsst auch die lokale IP-Adresse des Pixoo eintragen. Diese findet ihr über euren Router oder über die Pixoo Divoom App. In der App auf "Entdecken" unten links. Dann unter "Verfügbare Geräte" euren Pixoo64 auswählen und die "IP-Adresse" abschreiben. In meinem Fall ist es 192.168.2.200. Diese durch eure eigene in der Datei local_ip.py ersetzen.
 
 Ziel ist es, dass je nach aktuellem Preis die Ampel rot, gelb oder grün zeigt. Angegeben werden auch das Datum, Uhrzeit und der Preis.
 
 Starte nun die pixoo_display.py in einer passenden Umgebebung. 
-Wie ihr diese Umgebung einrichtet zeige ich euch in einem Video. 
-So bald dieses Video verfügbar ist schreibe ich den Link hier rein.
+Wie ihr diese Umgebung einrichtet zeige ich euch in einem Video https://youtu.be/zBce0U4HaOg
 
 Nach dem Starten wird das Display alle 60 Sekunden aktualisiert. Bei ersten Start, startet das Display einmal neu um in den Epfangmodus zu wechseln. 
 
@@ -44,16 +45,17 @@ Please install and import the following modules:
 from pixoo import Pixoo # This is the library for the Pixoo64
 import time
 import requests
+import api_key
+import local_ip
 
-To get the real-time price display, you need a Tibber API key. You can get your Tibber API key here: https://developer.tibber.com/settings/access-token. Simply register there with your normal access data. You have to enter this at the appropriate place in the pixoo_display.py file.
+To get the real-time price display, you need a Tibber API key. You can get your Tibber API key here: https://developer.tibber.com/settings/access-token. Simply register there with your normal access data. You have to enter this at the appropriate place in the api_key.py file.
 
 You must also enter the local IP address of the Pixoo. You can find this via your router or via the Pixoo Divoom app. In the app on "Discover" on the bottom left. Then select your Pixoo64 under "Available devices" and write down the "IP address". In my case it is 192.168.2.200. Replace this with your own in the local_ip.py file.
 
 The aim is for the traffic light to show red, yellow or green depending on the current price. The date, time and price are also given.
 
 Now start the pixoo_display.py in a suitable environment.
-I'll show you how to set up this environment in a video.
-As soon as this video is available I will post the link here.
+I show you how to set up this environment in a video https://youtu.be/zBce0U4HaOg
 
 After starting, the display is updated every 60 seconds. At the first start, the display restarts once to switch to the reception mode.
 
