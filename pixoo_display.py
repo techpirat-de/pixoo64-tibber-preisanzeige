@@ -73,7 +73,6 @@ def pixoo_text():
     now = time.localtime()
     print(time.strftime('%H:%M:%S', now))
 
-    pix.push()
     # Setze den Hintergrund auf schwarz    
     pix.fill((0, 0, 0))
     # Bestimme das Hintergrundbild
@@ -86,6 +85,7 @@ def pixoo_text():
     # Ist der total_price größer als 0,4 dann zeige rote Ampel
     elif total_price > 0.4:
         pix.draw_image('images/ampel_rot.png')
+    
     # Schreibe die Texte auf dem Display
     pix.draw_text('Tibber', (3,  3), (  0,   255, 0))
     pix.draw_text('Strompreis', (3,  9), (255,   0,   0))
@@ -99,7 +99,7 @@ def pixoo_text():
         pix.draw_text(str(total_price) + ' Euro', (3,  28), (255,255,0))
     # Ist der total_price größer als 0,4 dann zeige rote Schrift
     elif total_price > 0.4:
-       pix.draw_text(str(total_price) + ' Euro', (3,  28), (255,   0,   0))
+        pix.draw_text(str(total_price) + ' Euro', (3,  28), (255,   0,   0))
 
     pix.draw_text('Preis', (3, 50), (252,   253,   254))
     pix.draw_text('inkl. Abgaben', (3, 56), (252,   253,   254))
@@ -107,8 +107,22 @@ def pixoo_text():
     pix.push()
     # Schreibe die Laufschrift auf dem Display 
     pix.send_text( '    Jede Stunde wird der Preis angepasst                    ' , (0, 32), (  0,   255, 0), 1, 0, 46,  75)
-    # wiederholen alle 60 Sekunden die Funktion
-    time.sleep(60)
+
+    # Setze den Hintergrund auf schwarz    
+    pix.fill((0, 0, 0))
+    # Bestimme das Hintergrundbild
+    # Ist der total_price kleiner als 0,3 dann zeige grüne Ampel
+    if total_price < 0.3:
+        pix.draw_image('images/ampel_gruen.png')
+    # Ist der total_price größer als 0,3 und kleiner als 0,4 dann zeige gelbe Ampel
+    elif total_price > 0.3 and total_price < 0.4:
+        pix.draw_image('images/ampel_gelb.png')
+    # Ist der total_price größer als 0,4 dann zeige rote Ampel
+    elif total_price > 0.4:
+        pix.draw_image('images/ampel_rot.png')
+
+    # wiederholen alle 10 Sekunden die Funktion
+    time.sleep(10)
     # Starte die Funktion erneut
     pixoo_text()
 pixoo_text()
